@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import SearchBar from "../components/SearchBar";
-import DataSearchResult from "../components/DataSearchResult";
+import DataList from "../components/DataList";
 import API from "../utils/API";
 import Wrapper from "../components/Wrapper";
 import Header from "../components/Header";
@@ -10,19 +10,12 @@ const Home = () => {
         users: [],
         order: "descend",
         filteredUsers: [],
-        headings: [
-            {name: "Image"},
-            {name: "Name"},
-            {name: 'Phone'},
-            {name: 'Email'},
-            {name: "DOB"}
-        ]
     });
 
     const handleSearchChange = event => {
         const {value} = event.target;
         const filteredList = dataSearch.users.filter(item => {
-            let person = item.name.first.toLowerCase().includes(value.toLowerCase()) ;
+            let person = item.name.first.toLowerCase().includes(value.toLowerCase());
 
             return person;
         })
@@ -49,7 +42,7 @@ const Home = () => {
         <Wrapper>
             <Header />
            <SearchBar handleInputChange={handleSearchChange} />
-           <DataSearchResult filteredUsers={dataSearch.filteredUsers}/>
+           <DataList filteredUsers={dataSearch.filteredUsers}/>
         </Wrapper>
 
     )
