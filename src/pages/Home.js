@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
 import SearchBar from "../components/SearchBar";
 import DataSearchResult from "../components/DataSearchResult";
-import API from "../utils/API"
-import Wrapper from "../components/Wrapper"
+import API from "../utils/API";
+import Wrapper from "../components/Wrapper";
+import Header from "../components/Header";
 
 const Home = () => {
     const [dataSearch, setDataSearch] = useState({
@@ -46,6 +47,7 @@ const Home = () => {
     return(
          
         <Wrapper>
+            <Header />
            <SearchBar handleInputChange={handleSearchChange} />
            <DataSearchResult filteredUsers={dataSearch.filteredUsers}/>
         </Wrapper>
