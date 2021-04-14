@@ -4,7 +4,6 @@ import "../styles/DataTable.css";
 
 const DataTable = ({ login, image, name, phone, email, dob }) => {
     return (
-        <Table >
             <tbody>
 
                 <tr key={login}>
@@ -32,7 +31,6 @@ const DataTable = ({ login, image, name, phone, email, dob }) => {
                     </td>
                 </tr>
             </tbody>
-        </Table>
 
 
 
