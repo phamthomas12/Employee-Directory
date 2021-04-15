@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/DataTable.css";
 
 
-const DataTable = ({ login, image, name, phone, email, dob }) => {
+
+const DataTable = ({handleSort, login, image, name, phone, email, dob }) => {
     return (
             <tbody>
 
@@ -16,7 +16,7 @@ const DataTable = ({ login, image, name, phone, email, dob }) => {
                         />
 
                     </td>
-                    <td data-th="Name">
+                    <td data-th="Name" className="name" onClick={handleSort}>
                         {name}
 
                     </td>
@@ -26,7 +26,7 @@ const DataTable = ({ login, image, name, phone, email, dob }) => {
                     <td data-th="Email">
                         {email}
                     </td>
-                    <td data-th="DOB">
+                    <td data-th="DOB" className="dob">
                         {dob}
                     </td>
                 </tr>
